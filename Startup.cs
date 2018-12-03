@@ -40,7 +40,7 @@ namespace FirstNetCoreMvcProject
 
                  .AddDbContext<CoreMvcDbContext>();
 
-           // (option => option.UseSqlServer(Configuration["database:connection"]));
+          // (option => option.UseSqlServer(Configuration["database:connection"]));
         
 
         services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

@@ -9,6 +9,17 @@
 <p>
     <a asp-action="Ekle" asp-controller="Urun">Create New</a>
 </p>
+
+<p>
+    <form asp-action="Index" method="get">
+        <table>
+            <tr>
+                <td><input type="text" name="filter" /></td>
+                <td><input type="submit" value="Ara" /></td>
+            </tr>
+        </table>
+        </form>
+</p>
 <table class="table">
     <thead>
         <tr>

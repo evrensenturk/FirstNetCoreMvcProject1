@@ -9,10 +9,10 @@ namespace FirstNetCoreMvcProject.Repositories
 {
     public class EfProductDal : IProductDal
     {
-        static string connection = @"Data Source=(local);Initial Catalog=NetMvcProject;User=sa;Password=sa123;";
+       // static string connection = @"Data Source=(local);Initial Catalog=NetMvcProject;User=sa;Password=sa123;";
 
 
-        CoreMvcDbContext dbContext = new CoreMvcDbContext(connection);
+        CoreMvcDbContext dbContext = new CoreMvcDbContext();
         public void AddProduct(Product p)
         {
             dbContext.Add(p);
@@ -29,7 +29,7 @@ namespace FirstNetCoreMvcProject.Repositories
 
             foreach (var item in dbContext.Products)
             {
-                if (item.ToString() == filter)
+                if (item.ProductBrand.Contains(filter)||item.ProductName.Contains(filter))
                 {
                     yield return item;
                 }

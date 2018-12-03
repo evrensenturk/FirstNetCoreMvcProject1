@@ -21,10 +21,18 @@ namespace FirstNetCoreMvcProject.Controllers
             this._dal = dal;
             this._environment = enviroment;
         }
-        public IActionResult Index()
+        public IActionResult Index(string filter)
         {
-            
-            return View(_dal.GetAll());
+            if (filter == null)
+            {
+
+                return View(_dal.GetAll());
+            }
+            else
+             
+            {
+                return View(_dal.SearchProduct(filter));
+            }
         }
         [HttpGet]
         public IActionResult Ekle()
