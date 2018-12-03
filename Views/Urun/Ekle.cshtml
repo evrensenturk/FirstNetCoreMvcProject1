@@ -1,0 +1,52 @@
+﻿@model FirstNetCoreMvcProject.Models.ProductViewModel
+
+@{
+    ViewData["Title"] = "Ekle";
+}
+
+<h2>Ekle</h2>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Ekle" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="MyProduct.ProductName" class="control-label"></label>
+                <input asp-for="MyProduct.ProductName" class="form-control" />
+                <span asp-validation-for="MyProduct.ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MyProduct.ProductPrice" class="control-label"></label>
+                <input asp-for="MyProduct.ProductPrice" class="form-control" />
+                <span asp-validation-for="MyProduct.ProductPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MyProduct.ProductStock" class="control-label"></label>
+                <input asp-for="MyProduct.ProductStock" class="form-control" />
+                <span asp-validation-for="MyProduct.ProductStock" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MyProduct.ProductImg" class="control-label"></label>
+                <input asp-for="File"  type="file" class="form-control" />
+                <span asp-validation-for="MyProduct.ProductImg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MyProduct.ProductBrand" class="control-label"></label>
+                
+                <select asp-for="MyProduct.ProductBrand" asp-items="Model.Markalar"></select>
+                <span asp-validation-for="MyProduct.ProductBrand" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
